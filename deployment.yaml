@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: authentication
-          image: authentication
+          image: authentication:latest
           ports:
             - containerPort: 3000
 ---
@@ -58,7 +58,7 @@ spec:
     spec:
       containers:
         - name: enter-data
-          image: enter-data
+          image: enter-data:latest
           ports:
             - containerPort: 5000
           env:
@@ -169,7 +169,7 @@ spec:
     spec:
       containers:
         - name: show-results
-          image: show-results
+          image: show-results:latest
           ports:
             - containerPort: 5004
           env:
@@ -200,7 +200,7 @@ spec:
     spec:
       containers:
         - name: analytics
-          image: analytics-service
+          image: analytics-service:latest
           env:
             - name: MYSQL_HOST
               value: mysql-db
