@@ -1,0 +1,5 @@
+*/node_modules/
+mysql/
+mongo/
+
+*/__pycache__

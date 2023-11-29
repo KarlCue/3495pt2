@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+    <title>Enter Data</title>
+</head>
+<body>
+    <h1>Enter Data:</h1>
+    <form hx-post="/enter-data" hx-swap="innerHTML" hx-target="#result">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+        <br>
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date">
+        <br>
+        <label for="min_temp">Min Temperature:</label>
+        <input type="number" name="min_temp" id="min_temp">
+        <br>
+        <label for="max_temp">Max Temperature:</label>
+        <input type="number" name="max_temp" id="max_temp">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <div id="result"></div>
+</body>
+</html>
