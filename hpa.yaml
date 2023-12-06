@@ -59,6 +59,68 @@ spec:
         type: Utilization
         averageUtilization: 50  # Target average CPU utilization percentage
 
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: analytics-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: v1
+    kind: Deployment  
+    name: analytics
+  minReplicas: 2  # Minimum number of replicas
+  maxReplicas: 5  # Maximum number of replicas
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50  # Target average CPU utilization percentage
+
+---
+
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: mongo-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: v1
+    kind: Deployment 
+    name: mongo
+  minReplicas: 2  # Minimum number of replicas
+  maxReplicas: 5  # Maximum number of replicas
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50  # Target average CPU utilization percentage
+
+---
+
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: mysql-db-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: v1
+    kind: Deployment  
+    name: mysql-db
+  minReplicas: 2  # Minimum number of replicas
+  maxReplicas: 5  # Maximum number of replicas
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50  # Target average CPU utilization percentage
+
+
 
 
 
