@@ -271,7 +271,7 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: show-results
-  minReplicas: 2
+  minReplicas: 1
   maxReplicas: 5
   targetCPUUtilizationPercentage: 70
 ---
@@ -285,7 +285,7 @@ spec:
     apiVersion: apps/v1
     kind: Deployment 
     name: enter-data
-  minReplicas: 2
+  minReplicas: 1
   maxReplicas: 5
   targetCPUUtilizationPercentage: 70
 ---
@@ -299,7 +299,7 @@ spec:
     apiVersion: apps/v1
     kind: Deployment  
     name: authentication
-  minReplicas: 2
+  minReplicas: 1
   maxReplicas: 5
   targetCPUUtilizationPercentage: 70
 ---
@@ -313,7 +313,7 @@ spec:
     apiVersion: apps/v1
     kind: Deployment  
     name: analytics
-  minReplicas: 2
+  minReplicas: 1
   maxReplicas: 5
   targetCPUUtilizationPercentage: 70
 
