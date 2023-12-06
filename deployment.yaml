@@ -71,8 +71,8 @@ spec:
     - protocol: TCP
       port: 80
   type: LoadBalancer  # Change from ClusterIP to LoadBalancer
-
-apiVersion: apps/v1
+---
+apiVersion: v1
 kind: Deployment
 metadata:
   name: authentication
@@ -89,7 +89,7 @@ spec:
       containers:
         - name: authentication
 ---
-apiVersion: apps/v1
+apiVersion: v1
 kind: Deployment
 metadata:
   name: enter-data
@@ -116,7 +116,7 @@ spec:
             - name: AUTH_URL
               value: "http://authentication:3000"
 ---
-apiVersion: apps/v1
+apiVersion: v1
 kind: Deployment
 metadata:
   name: mysql-db
@@ -138,7 +138,7 @@ spec:
             - name: MYSQL_ROOT_PASSWORD
               value: "SeCur3Pas5w0rd"
 ---
-apiVersion: apps/v1
+apiVersion: v1
 kind: Deployment
 metadata:
   name: mongo
@@ -162,7 +162,7 @@ spec:
             - name: MONGO_INITDB_ROOT_PASSWORD
               value: "Secur3PAssw0rd"
 ---
-apiVersion: apps/v1
+apiVersion: v1
 kind: Deployment
 metadata:
   name: show-results
@@ -192,7 +192,7 @@ spec:
             - name: AUTH_URL
               value: "http://authentication:3000"
 ---
-apiVersion: apps/v1
+apiVersion: v1
 kind: Deployment
 metadata:
   name: analytics
