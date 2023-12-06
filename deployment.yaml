@@ -238,12 +238,12 @@ metadata:
   name: show-results-hpa
 spec:
   scaleTargetRef:
-    apiVersion: v1
+    apiVersion: apps/v1
     kind: Deployment
     name: show-results
-  minReplicas: 2  # Minimum number of replicas
-  maxReplicas: 5  # Maximum number of replicas
-  targetCPUUtilizationPercentage: 1
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 70
 ---
 
 apiVersion: autoscaling/v1
@@ -252,12 +252,12 @@ metadata:
   name: enter-data-hpa
 spec:
   scaleTargetRef:
-    apiVersion: v1
+    apiVersion: apps/v1
     kind: Deployment 
     name: enter-data
-  minReplicas: 2  # Minimum number of replicas
-  maxReplicas: 5  # Maximum number of replicas
-  targetCPUUtilizationPercentage: 1
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 70
 ---
 
 apiVersion: autoscaling/v1
@@ -266,21 +266,24 @@ metadata:
   name: authentication-hpa
 spec:
   scaleTargetRef:
-    apiVersion: v1
+    apiVersion: apps/v1
     kind: Deployment  
     name: authentication
-  minReplicas: 2  # Minimum number of replicas
-  maxReplicas: 5  # Maximum number of replicas
-  targetCPUUtilizationPercentage: 1
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 70
 ---
+
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: analytics-hpa
 spec:
   scaleTargetRef:
-    apiVersion: v1
+    apiVersion: apps/v1
     kind: Deployment  
     name: analytics
-  minReplicas: 2  # Minimum number of replicas
+  minReplicas: 2
   maxReplicas: 5
+  targetCPUUtilizationPercentage: 70
+
