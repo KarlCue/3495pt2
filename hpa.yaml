@@ -5,7 +5,7 @@ metadata:
 spec:
   scaleTargetRef:
     apiVersion: v1
-    kind: Deployment
+    kind: Service
     name: show-results
   minReplicas: 2  # Minimum number of replicas
   maxReplicas: 5  # Maximum number of replicas
