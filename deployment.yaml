@@ -29,6 +29,11 @@ spec:
       containers:
         - name: authentication
           image: karlcue/authentication:v1
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 200m
 ---
 apiVersion: v1
 kind: Service
@@ -69,6 +74,11 @@ spec:
               value: "SeCur3Pas5w0rd"
             - name: AUTH_URL
               value: "http://authentication:3000"
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 200m
 ---
 apiVersion: v1
 kind: Service
@@ -105,6 +115,11 @@ spec:
               value: "data-db"
             - name: MYSQL_ROOT_PASSWORD
               value: "SeCur3Pas5w0rd"
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 200m
 ---
 apiVersion: v1
 kind: Service
@@ -143,6 +158,11 @@ spec:
               value: "user"
             - name: MONGO_INITDB_ROOT_PASSWORD
               value: "Secur3PAssw0rd"
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 200m
 ---
 apiVersion: v1
 kind: Service
@@ -187,6 +207,11 @@ spec:
               value: "user"
             - name: AUTH_URL
               value: "http://authentication:3000"
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 200m
 ---
 apiVersion: v1
 kind: Service
@@ -231,6 +256,11 @@ spec:
               value: "Secur3PAssw0rd"
             - name: MONGO_USERNAME
               value: "user"
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 200m
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
