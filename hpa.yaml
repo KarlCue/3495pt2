@@ -4,18 +4,12 @@ metadata:
   name: show-results-hpa
 spec:
   scaleTargetRef:
-    apiVersion: apps/v1
+    apiVersion: v1
     kind: Deployment  
     name: show-results
   minReplicas: 2  # Minimum number of replicas
   maxReplicas: 5  # Maximum number of replicas
-  metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 50  # Target average CPU utilization percentage
+  targetCPUUtilizationPercentage: 50
 
 ---
 
@@ -25,19 +19,12 @@ metadata:
   name: enter-data-hpa
 spec:
   scaleTargetRef:
-    apiVersion: apps/v1
+    apiVersion: v1
     kind: Deployment 
     name: enter-data
   minReplicas: 2  # Minimum number of replicas
   maxReplicas: 5  # Maximum number of replicas
-  metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 50  # Target average CPU utilization percentage
-
+  targetCPUUtilizationPercentage: 50
 ---
 
 apiVersion: autoscaling/v1
@@ -46,18 +33,13 @@ metadata:
   name: authentication-hpa
 spec:
   scaleTargetRef:
-    apiVersion: apps/v1
+    apiVersion: v1
     kind: Deployment  
     name: authentication
   minReplicas: 2  # Minimum number of replicas
   maxReplicas: 5  # Maximum number of replicas
   metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 50  # Target average CPU utilization percentage
+  targetCPUUtilizationPercentage: 50
 
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
@@ -65,18 +47,12 @@ metadata:
   name: analytics-hpa
 spec:
   scaleTargetRef:
-    apiVersion: apps/v1
+    apiVersion: v1
     kind: Deployment  
     name: analytics
   minReplicas: 2  # Minimum number of replicas
   maxReplicas: 5  # Maximum number of replicas
-  metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 50  # Target average CPU utilization percentage
+  targetCPUUtilizationPercentage: 50
 
 ---
 
@@ -86,18 +62,12 @@ metadata:
   name: mongo-hpa
 spec:
   scaleTargetRef:
-    apiVersion: apps/v1
+    apiVersion: v1
     kind: Deployment 
     name: mongo
   minReplicas: 2  # Minimum number of replicas
   maxReplicas: 5  # Maximum number of replicas
-  metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 50  # Target average CPU utilization percentage
+  targetCPUUtilizationPercentage: 50
 
 ---
 
@@ -107,19 +77,12 @@ metadata:
   name: mysql-db-hpa
 spec:
   scaleTargetRef:
-    apiVersion: apps/v1
+    apiVersion: v1
     kind: Deployment  
     name: mysql-db
   minReplicas: 2  # Minimum number of replicas
   maxReplicas: 5  # Maximum number of replicas
-  metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 50  # Target average CPU utilization percentage
-
+  targetCPUUtilizationPercentage: 50
 
 
 
