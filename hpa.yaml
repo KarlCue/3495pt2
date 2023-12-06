@@ -1,11 +1,11 @@
-apiVersion: autoscaling/v1
+apiVersion: v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: show-results-hpa
 spec:
   scaleTargetRef:
     apiVersion: v1
-    kind: Service
+    kind: Deployment
     name: show-results
   minReplicas: 2  # Minimum number of replicas
   maxReplicas: 5  # Maximum number of replicas
@@ -13,7 +13,7 @@ spec:
 
 ---
 
-apiVersion: autoscaling/v1
+apiVersion: v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: enter-data-hpa
@@ -27,7 +27,7 @@ spec:
   targetCPUUtilizationPercentage: 1
 ---
 
-apiVersion: autoscaling/v1
+apiVersion: v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: authentication-hpa
@@ -40,7 +40,7 @@ spec:
   maxReplicas: 5  # Maximum number of replicas
   targetCPUUtilizationPercentage: 1
 ---
-apiVersion: autoscaling/v1
+apiVersion: v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: analytics-hpa
@@ -55,7 +55,7 @@ spec:
 
 ---
 
-apiVersion: autoscaling/v1
+apiVersion: v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: mongo-hpa
@@ -70,7 +70,7 @@ spec:
 
 ---
 
-apiVersion: autoscaling/v1
+apiVersion: v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: mysql-db-hpa
