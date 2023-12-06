@@ -9,7 +9,7 @@ spec:
     name: show-results
   minReplicas: 2  # Minimum number of replicas
   maxReplicas: 5  # Maximum number of replicas
-  targetCPUUtilizationPercentage: 50
+  targetCPUUtilizationPercentage: 10
 
 ---
 
@@ -24,7 +24,7 @@ spec:
     name: enter-data
   minReplicas: 2  # Minimum number of replicas
   maxReplicas: 5  # Maximum number of replicas
-  targetCPUUtilizationPercentage: 50
+  targetCPUUtilizationPercentage: 10
 ---
 
 apiVersion: autoscaling/v1
@@ -39,7 +39,7 @@ spec:
   minReplicas: 2  # Minimum number of replicas
   maxReplicas: 5  # Maximum number of replicas
   metrics:
-  targetCPUUtilizationPercentage: 50
+  targetCPUUtilizationPercentage: 10
 
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
@@ -52,7 +52,7 @@ spec:
     name: analytics
   minReplicas: 2  # Minimum number of replicas
   maxReplicas: 5  # Maximum number of replicas
-  targetCPUUtilizationPercentage: 50
+  targetCPUUtilizationPercentage: 10
 
 ---
 
@@ -67,7 +67,7 @@ spec:
     name: mongo
   minReplicas: 2  # Minimum number of replicas
   maxReplicas: 5  # Maximum number of replicas
-  targetCPUUtilizationPercentage: 50
+  targetCPUUtilizationPercentage: 10
 
 ---
 
@@ -82,7 +82,7 @@ spec:
     name: mysql-db
   minReplicas: 2  # Minimum number of replicas
   maxReplicas: 5  # Maximum number of replicas
-  targetCPUUtilizationPercentage: 50
+  targetCPUUtilizationPercentage: 10
 
 
 
