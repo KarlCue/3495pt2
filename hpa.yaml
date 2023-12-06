@@ -4,7 +4,7 @@ metadata:
   name: show-results-hpa
 spec:
   scaleTargetRef:
-    apiVersion: v1
+    apiVersion: apps/v1
     kind: Deployment  
     name: show-results
   minReplicas: 2  # Minimum number of replicas
@@ -25,7 +25,7 @@ metadata:
   name: enter-data-hpa
 spec:
   scaleTargetRef:
-    apiVersion: v1
+    apiVersion: apps/v1
     kind: Deployment 
     name: enter-data
   minReplicas: 2  # Minimum number of replicas
@@ -46,7 +46,7 @@ metadata:
   name: authentication-hpa
 spec:
   scaleTargetRef:
-    apiVersion: v1
+    apiVersion: apps/v1
     kind: Deployment  
     name: authentication
   minReplicas: 2  # Minimum number of replicas
@@ -65,7 +65,7 @@ metadata:
   name: analytics-hpa
 spec:
   scaleTargetRef:
-    apiVersion: v1
+    apiVersion: apps/v1
     kind: Deployment  
     name: analytics
   minReplicas: 2  # Minimum number of replicas
@@ -86,7 +86,7 @@ metadata:
   name: mongo-hpa
 spec:
   scaleTargetRef:
-    apiVersion: v1
+    apiVersion: apps/v1
     kind: Deployment 
     name: mongo
   minReplicas: 2  # Minimum number of replicas
@@ -107,7 +107,7 @@ metadata:
   name: mysql-db-hpa
 spec:
   scaleTargetRef:
-    apiVersion: v1
+    apiVersion: apps/v1
     kind: Deployment  
     name: mysql-db
   minReplicas: 2  # Minimum number of replicas
