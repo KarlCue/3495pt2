@@ -48,7 +48,7 @@ spec:
   type: LoadBalancer  # Change from ClusterIP to LoadBalancer
 ---
 apiVersion: v1
-kind: Service
+kind: Deployment
 metadata:
   name: show-results
 spec:
