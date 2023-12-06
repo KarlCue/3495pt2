@@ -183,10 +183,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: analytics-service
+  name: analytics
 spec:
   selector:
-    app: analytics-service
+    app: analytics
   ports:
     - protocol: TCP
       port: 80
@@ -195,19 +195,19 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: analytics-service
+  name: analytics
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: analytics-service
+      app: analytics
   template:
     metadata:
       labels:
-        app: analytics-service
+        app: analytics
     spec:
       containers:
-        - name: analytics-service
+        - name: analytics
           image: karlcue/analytics:v1
           env:
             - name: MYSQL_HOST
@@ -230,7 +230,7 @@ metadata:
 spec:
   scaleTargetRef:
     apiVersion: v1
-    kind: Service
+    kind: Deployment
     name: show-results
   minReplicas: 2  # Minimum number of replicas
   maxReplicas: 5  # Maximum number of replicas
