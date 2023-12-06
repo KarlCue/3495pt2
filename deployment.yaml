@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: authentication
-          image: authentication:latest
+          image: karlcue/authentication:v1
 ---
 apiVersion: v1
 kind: Service
