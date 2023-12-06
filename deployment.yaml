@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: authentication
 spec:
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 3000
       targetPort: 3000
-  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -32,13 +32,13 @@ kind: Service
 metadata:
   name: enter-data
 spec:
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 5000
       targetPort: 5000
   selector:
     app: enter-data
-  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -72,13 +72,13 @@ kind: Service
 metadata:
   name: mysql-db
 spec:
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 3306
       targetPort: 3306
   selector:
     app: mysql-db
-  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -108,13 +108,13 @@ kind: Service
 metadata:
   name: mongo
 spec:
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 27017
       targetPort: 27017
   selector:
     app: mongo
-  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -146,13 +146,13 @@ kind: Service
 metadata:
   name: show-results
 spec:
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 5004
       targetPort: 5004
   selector:
     app: show-results
-  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
